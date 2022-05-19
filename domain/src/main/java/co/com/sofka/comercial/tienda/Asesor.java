@@ -2,7 +2,7 @@ package co.com.sofka.comercial.tienda;
 
 import co.com.sofka.comercial.tienda.values.AsesorId;
 import co.com.sofka.comercial.tienda.values.Comision;
-import co.com.sofka.comercial.tienda.values.Nombre;
+import co.com.sofka.generic.values.Nombre;
 import co.com.sofka.domain.generic.Entity;
 
 public class Asesor extends Entity<AsesorId> {
