@@ -14,4 +14,12 @@ public class Cajero extends Entity<CajeroId> {
         this.nombre = nombre;
         this.caja = caja;
     }
+
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
+    }
+
+    public void actualizarCaja(Caja caja) {
+        this.caja = caja;
+    }
 }

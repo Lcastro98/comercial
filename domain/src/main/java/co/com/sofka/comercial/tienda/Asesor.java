@@ -14,4 +14,13 @@ public class Asesor extends Entity<AsesorId> {
         this.nombre = nombre;
         this.comision = comision;
     }
+
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
+    }
+
+    public void actualizarComision(Comision comision) {
+        this.comision = comision;
+    }
+
 }

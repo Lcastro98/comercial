@@ -14,4 +14,12 @@ public class Encargado extends Entity<EncargadoId> {
         this.nombre = nombre;
         this.metaMensual = metaMensual;
     }
+
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
+    }
+
+    public void actualizarMetaMensual(MetaMensual metaMensual) {
+        this.metaMensual = metaMensual;
+    }
 }
