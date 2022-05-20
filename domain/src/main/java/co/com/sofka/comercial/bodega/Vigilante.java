@@ -14,4 +14,12 @@ public class Vigilante extends Entity<VigilanteId> {
         this.nombre = nombre;
         this.horario = horario;
     }
+
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
+    }
+
+    public void actualizarHorario(Horario horario) {
+        this.horario = horario;
+    }
 }

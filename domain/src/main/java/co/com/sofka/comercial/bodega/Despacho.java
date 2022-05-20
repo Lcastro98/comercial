@@ -14,4 +14,12 @@ public class Despacho extends Entity<DespachoId> {
         this.fecha = fecha;
         this.destino = destino;
     }
+
+    public void actualizarFecha(Fecha fecha) {
+        this.fecha = fecha;
+    }
+
+    public void actualizarDestino(Destino destino) {
+        this.destino = destino;
+    }
 }

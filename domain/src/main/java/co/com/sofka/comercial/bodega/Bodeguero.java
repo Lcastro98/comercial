@@ -14,4 +14,12 @@ public class Bodeguero extends Entity<BodegueroId> {
         this.nombre = nombre;
         this.salario = salario;
     }
+
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
+    }
+
+    public void actualizarSalario(Salario salario) {
+        this.salario = salario;
+    }
 }
