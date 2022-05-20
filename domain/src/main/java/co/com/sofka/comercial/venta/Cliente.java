@@ -14,4 +14,12 @@ public class Cliente extends Entity<ClienteId> {
         this.nombre = nombre;
         this.telefono = telefono;
     }
+
+    public void actualizarNombre(Nombre nombre) {
+        this.nombre = nombre;
+    }
+
+    public void actualizarTelefono(Telefono telefono) {
+        this.telefono = telefono;
+    }
 }

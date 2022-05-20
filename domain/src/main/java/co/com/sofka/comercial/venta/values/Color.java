@@ -2,16 +2,16 @@ package co.com.sofka.comercial.venta.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-public class Descuento implements ValueObject<Float> {
+public class Color implements ValueObject<String> {
 
-    private final Float value;
+    private final String value;
 
-    public Descuento(Float value){
+    public Color(String value){
         this.value = value;
     }
 
     @Override
-    public Float value() {
+    public String value() {
         return value;
     }
 }
