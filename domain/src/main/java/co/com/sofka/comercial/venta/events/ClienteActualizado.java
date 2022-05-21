@@ -23,4 +23,16 @@ public class ClienteActualizado extends DomainEvent {
         this.telefono = telefono;
         nombre = null;
     }
+
+    public ClienteId getEntityId() {
+        return entityId;
+    }
+
+    public Nombre getNombre() {
+        return nombre;
+    }
+
+    public Telefono getTelefono() {
+        return telefono;
+    }
 }

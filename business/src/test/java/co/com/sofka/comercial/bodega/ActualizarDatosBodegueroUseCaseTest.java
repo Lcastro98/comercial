@@ -38,8 +38,8 @@ class ActualizarDatosBodegueroUseCaseTest {
             //arrange
             var bodegaId = BodegaId.of("xxxx");
             var entityId = BodegueroId.of("0");
-            var salario = new Salario(  "$", 2000000D);
-            var command = new ActualizarDatosBodeguero(bodegaId, entityId, salario);
+            var nombre = new Nombre(  "Angie", "Chaya");
+            var command = new ActualizarDatosBodeguero(bodegaId, entityId, nombre);
 
             when(repository.getEventsBy("xxxx")).thenReturn(history());
             useCase.addRepository(repository);

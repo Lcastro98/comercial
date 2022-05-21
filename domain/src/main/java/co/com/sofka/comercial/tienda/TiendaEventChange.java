@@ -26,27 +26,18 @@ public class TiendaEventChange extends EventChange {
             tienda.asesor.comision = event.getComision();
         });
 
-        apply((AsesorActualizado event1) -> {
-            tienda.asesor.actualizarNombre((Nombre) event1.getNombre().value());
-        });
-
         apply((AsesorActualizado event) -> {
+            tienda.asesor.actualizarNombre((Nombre) event.getNombre().value());
             tienda.asesor.actualizarComision(event.getComision());
         });
 
         apply((CajeroActualizado event) -> {
             tienda.cajero.actualizarNombre((Nombre) event.getNombre().value());
-        });
-
-        apply((CajeroActualizado event) -> {
             tienda.cajero.actualizarCaja(event.getCaja());
         });
 
         apply((EncargadoActualizado event) -> {
-            tienda.encargado.actualizarNombre(event.getNombre());
-        });
-
-        apply((EncargadoActualizado event) -> {
+            tienda.encargado.actualizarNombre((Nombre) event.getNombre().value());
             tienda.encargado.actualizarMetaMensual(event.getMetaMensual());
         });
     }

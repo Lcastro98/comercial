@@ -12,7 +12,7 @@ public class ActualizarDatosBodegueroUseCase extends UseCase<RequestCommand<Actu
         var bodega = Bodega.from(
                 command.getBodegaId(), repository().getEventsBy(command.getBodegaId().value())
         );
-        bodega.actualizarDatosBodeguero(command.getEntityId(), command.getSalario());
+        bodega.actualizarDatosBodeguero(command.getEntityId(), command.getNombre());
 
         emit().onResponse(new ResponseEvents(bodega.getUncommittedChanges()));
 
