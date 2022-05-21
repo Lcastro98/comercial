@@ -1,6 +1,7 @@
 package co.com.sofka.comercial.tienda;
 
 import co.com.sofka.comercial.tienda.events.*;
+import co.com.sofka.comercial.tienda.values.Comision;
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofka.generic.values.Nombre;
 
@@ -25,8 +26,8 @@ public class TiendaEventChange extends EventChange {
             tienda.asesor.comision = event.getComision();
         });
 
-        apply((AsesorActualizado event) -> {
-            tienda.asesor.actualizarNombre(event.getNombre());
+        apply((AsesorActualizado event1) -> {
+            tienda.asesor.actualizarNombre((Nombre) event1.getNombre().value());
         });
 
         apply((AsesorActualizado event) -> {
@@ -34,7 +35,7 @@ public class TiendaEventChange extends EventChange {
         });
 
         apply((CajeroActualizado event) -> {
-            tienda.cajero.actualizarNombre(event.getNombre());
+            tienda.cajero.actualizarNombre((Nombre) event.getNombre().value());
         });
 
         apply((CajeroActualizado event) -> {
