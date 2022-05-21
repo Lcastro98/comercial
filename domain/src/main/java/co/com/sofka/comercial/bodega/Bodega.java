@@ -2,6 +2,7 @@ package co.com.sofka.comercial.bodega;
 
 import co.com.sofka.comercial.bodega.events.*;
 import co.com.sofka.comercial.bodega.values.*;
+import co.com.sofka.comercial.tienda.values.Ubicacion;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.generic.values.Fecha;
@@ -15,6 +16,7 @@ public class Bodega extends AggregateEvent<BodegaId> {
     protected Vigilante vigilante;
     protected Despacho despacho;
     protected Dimension dimension;
+    protected Ubicacion ubicacion;
 
     public Bodega(BodegaId entityId, Dimension dimension) {
         super(entityId);
@@ -82,6 +84,10 @@ public class Bodega extends AggregateEvent<BodegaId> {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(destino);
         appendChange(new DespachoActualizado(entityId, destino)).apply();
+    }
+
+    public void realizarDespacho(Ubicacion ubicacion) {
+        appendChange(new DespachoRealizado(ubicacion)).apply();
     }
 
     public Bodeguero bodeguero() {

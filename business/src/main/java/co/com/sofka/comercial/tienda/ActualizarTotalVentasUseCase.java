@@ -3,7 +3,7 @@ package co.com.sofka.comercial.tienda;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.ResponseEvents;
 import co.com.sofka.business.support.TriggeredEvent;
-import co.com.sofka.comercial.venta.VentaRegistrada;
+import co.com.sofka.comercial.venta.events.VentaRegistrada;
 
 public class ActualizarTotalVentasUseCase extends UseCase<TriggeredEvent<VentaRegistrada>, ResponseEvents> {
     @Override

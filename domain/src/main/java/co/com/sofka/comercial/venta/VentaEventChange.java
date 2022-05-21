@@ -1,9 +1,6 @@
 package co.com.sofka.comercial.venta;
 
-import co.com.sofka.comercial.venta.events.ClienteAsignado;
-import co.com.sofka.comercial.venta.events.CuponAsignado;
-import co.com.sofka.comercial.venta.events.ProductoAgregado;
-import co.com.sofka.comercial.venta.events.VentaCreada;
+import co.com.sofka.comercial.venta.events.*;
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofka.generic.values.Nombre;
 
@@ -32,5 +29,6 @@ public class VentaEventChange extends EventChange {
         apply((VentaRegistrada event) -> {
             venta.total = event.getTotal();
         });
+
     }
 }

@@ -39,5 +39,9 @@ public class BodegaEventChange extends EventChange {
             bodega.despacho.actualizarFecha(event.getFecha());
             bodega.despacho.actualizarDestino(event.getDestino());
         });
+
+        apply((DespachoRealizado event) -> {
+            bodega.ubicacion = event.getUbicacion();
+        });
     }
 }

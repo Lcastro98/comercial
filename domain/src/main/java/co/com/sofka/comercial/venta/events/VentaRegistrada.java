@@ -1,4 +1,4 @@
-package co.com.sofka.comercial.venta;
+package co.com.sofka.comercial.venta.events;
 
 import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.comercial.venta.values.Total;

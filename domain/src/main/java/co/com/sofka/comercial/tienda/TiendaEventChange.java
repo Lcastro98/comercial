@@ -43,5 +43,9 @@ public class TiendaEventChange extends EventChange {
         apply((TotalVentasActualizado event) -> {
             tienda.totalVentas = event.getTotalVentas();
         });
+
+        apply((DespachoSolicitado event) -> {
+            tienda.ubicacion = event.getUbicacion();
+        });
     }
 }
