@@ -12,12 +12,12 @@ public class TiendaEventChange extends EventChange {
         });
 
         apply((CajeroAsignado event) -> {
-            tienda.cajero.nombre = event.getNombre();
+            tienda.cajero.nombre = (Nombre) event.getNombre().value();
             tienda.cajero.caja = event.getCaja();
         });
 
         apply((EncargadoAsignado event) -> {
-            tienda.encargado.nombre = event.getNombre();
+            tienda.encargado.nombre = (Nombre) event.getNombre().value();
             tienda.encargado.metaMensual = event.getMetaMensual();
         });
 
