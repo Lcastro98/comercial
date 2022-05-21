@@ -11,6 +11,7 @@ public class CrearVentaUseCase extends UseCase<RequestCommand<CrearVenta>, Respo
         var command = crearVentaRequestCommand.getCommand();
 
         var venta = new Venta(
+                command.getTiendaId(),
                 command.getVentaId(),
                 command.getFecha(),
                 command.getTotal()

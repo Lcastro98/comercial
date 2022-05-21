@@ -1,5 +1,6 @@
 package co.com.sofka.comercial.venta;
 
+import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.comercial.venta.events.*;
 import co.com.sofka.comercial.venta.values.*;
 import co.com.sofka.comercial.venta.values.Color;
@@ -12,15 +13,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class Venta extends AggregateEvent<VentaId> {
+    protected TiendaId tiendaId;
     protected Cliente cliente;
     protected List<Producto> productos;
     protected Cupon cupon;
     protected Fecha fecha;
     protected Total total;
 
-    public Venta(VentaId entityId, Fecha fecha, Total total) {
+    public Venta(TiendaId tiendaId, VentaId entityId, Fecha fecha, Total total) {
         super(entityId);
-        appendChange(new VentaCreada(fecha, total)).apply();
+        appendChange(new VentaCreada(tiendaId, fecha, total)).apply();
         subscribe(new VentaEventChange(this));
     }
 
@@ -84,5 +86,33 @@ public class Venta extends AggregateEvent<VentaId> {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(fecha);
         appendChange(new CuponActualizado(entityId, fecha)).apply();
+    }
+
+    public void registrarVenta(Total total){
+        appendChange(new VentaRegistrada(total, tiendaId)).apply();
+    }
+
+    public TiendaId tiendaId() {
+        return tiendaId;
+    }
+
+    public Cliente cliente() {
+        return cliente;
+    }
+
+    public List<Producto> productos() {
+        return productos;
+    }
+
+    public Cupon cupon() {
+        return cupon;
+    }
+
+    public Fecha fecha() {
+        return fecha;
+    }
+
+    public Total total() {
+        return total;
     }
 }

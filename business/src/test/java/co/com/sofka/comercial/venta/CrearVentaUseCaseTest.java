@@ -2,6 +2,8 @@ package co.com.sofka.comercial.venta;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
+import co.com.sofka.comercial.tienda.Tienda;
+import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.comercial.venta.commands.CrearVenta;
 import co.com.sofka.comercial.venta.events.VentaCreada;
 import co.com.sofka.comercial.venta.values.Total;
@@ -11,7 +13,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,10 +28,11 @@ class CrearVentaUseCaseTest {
     @Test
     public void crearVentaHappyPass(){
         //arrange
+        var tiendaId = TiendaId.of("zzzz");
         var ventaId = VentaId.of("bbbb");
         var fecha = new Fecha(LocalDateTime.of(2022, 05, 20, 8, 19));
         var total = new Total(20000D);
-        var command = new CrearVenta(ventaId, fecha, total);
+        var command = new CrearVenta(tiendaId, ventaId, fecha, total);
 
         //act
         var events = UseCaseHandler.getInstance()

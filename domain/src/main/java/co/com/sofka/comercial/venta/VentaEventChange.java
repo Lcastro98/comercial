@@ -28,5 +28,9 @@ public class VentaEventChange extends EventChange {
             venta.cupon.descuento = event.getDescuento();
             venta.cupon.fecha = event.getFecha();
         });
+
+        apply((VentaRegistrada event) -> {
+            venta.total = event.getTotal();
+        });
     }
 }

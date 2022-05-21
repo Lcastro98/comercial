@@ -3,6 +3,7 @@ package co.com.sofka.comercial.tienda;
 
 import co.com.sofka.comercial.tienda.events.*;
 import co.com.sofka.comercial.tienda.values.*;
+import co.com.sofka.comercial.venta.values.Total;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofka.generic.values.Nombre;
@@ -15,6 +16,7 @@ public class Tienda extends AggregateEvent<TiendaId> {
     protected Encargado encargado;
     protected Asesor asesor;
     protected Ubicacion ubicacion;
+    protected Total totalVentas;
 
     public Tienda(TiendaId entityId, Ubicacion ubicacion) {
         super(entityId);
@@ -83,6 +85,10 @@ public class Tienda extends AggregateEvent<TiendaId> {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(comision);
         appendChange(new AsesorActualizado(entityId, comision)).apply();
+    }
+
+    public void actualizarTotalVentas(Total totalVentas) {
+        appendChange(new TotalVentasActualizado(totalVentas)).apply();
     }
 
     public Cajero cajero() {

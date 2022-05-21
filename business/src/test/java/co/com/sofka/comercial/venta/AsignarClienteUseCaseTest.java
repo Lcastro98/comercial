@@ -3,6 +3,7 @@ package co.com.sofka.comercial.venta;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
+import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.comercial.venta.commands.AsignarCliente;
 import co.com.sofka.comercial.venta.events.ClienteAsignado;
 import co.com.sofka.comercial.venta.events.VentaCreada;
@@ -59,9 +60,11 @@ class AsignarClienteUseCaseTest {
     }
 
     private List<DomainEvent> history() {
+        var tiendaId = TiendaId.of("zzzz");
         var fecha = new Fecha(LocalDateTime.of(2022, 05, 20, 9, 50));
         var total = new Total(200000D);
         var event = new VentaCreada(
+                tiendaId,
                 fecha,
                 total);
         event.setAggregateRootId("zzzz");

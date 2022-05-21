@@ -63,9 +63,11 @@ class ActualizarDatosClienteUseCaseTest {
     }
 
     private List<DomainEvent> history() {
+        var tiendaId = TiendaId.of("zzzz");
         var fecha = new Fecha(LocalDateTime.of(2022, 05, 20, 9, 50));
         var total = new Total(200000D);
         var event = new VentaCreada(
+                tiendaId,
                 fecha,
                 total);
         event.setAggregateRootId("zzzz");
