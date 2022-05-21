@@ -5,6 +5,7 @@ import co.com.sofka.comercial.bodega.events.BodegueroAsignado;
 import co.com.sofka.comercial.bodega.events.DespachoAsignado;
 import co.com.sofka.comercial.bodega.events.VigilanteAsignado;
 import co.com.sofka.domain.generic.EventChange;
+import co.com.sofka.generic.values.Nombre;
 
 public class BodegaEventChange extends EventChange {
     public BodegaEventChange(Bodega bodega) {
@@ -13,7 +14,7 @@ public class BodegaEventChange extends EventChange {
         });
 
         apply((BodegueroAsignado event) -> {
-            bodega.bodeguero.nombre = event.getNombre();
+            bodega.bodeguero.nombre = (Nombre) event.getNombre().value();
             bodega.bodeguero.salario = event.getSalario();
         });
 

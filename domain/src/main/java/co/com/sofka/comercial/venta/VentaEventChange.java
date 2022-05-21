@@ -5,6 +5,7 @@ import co.com.sofka.comercial.venta.events.CuponAsignado;
 import co.com.sofka.comercial.venta.events.ProductoAgregado;
 import co.com.sofka.comercial.venta.events.VentaCreada;
 import co.com.sofka.domain.generic.EventChange;
+import co.com.sofka.generic.values.Nombre;
 
 public class VentaEventChange extends EventChange {
     public VentaEventChange(Venta venta) {
@@ -14,7 +15,7 @@ public class VentaEventChange extends EventChange {
         });
 
         apply((ClienteAsignado event) -> {
-            venta.cliente.nombre = event.getNombre();
+            venta.cliente.nombre = (Nombre) event.getNombre().value();
             venta.cliente.telefono = event.getTelefono();
         });
 

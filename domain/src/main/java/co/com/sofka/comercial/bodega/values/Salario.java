@@ -16,6 +16,6 @@ public class Salario implements ValueObject<String> {
 
     @Override
     public String value() {
-        return cantidad + " " + moneda;
+        return cantidad + moneda;
     }
 }

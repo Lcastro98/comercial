@@ -2,6 +2,7 @@ package co.com.sofka.comercial.tienda;
 
 import co.com.sofka.comercial.tienda.events.*;
 import co.com.sofka.domain.generic.EventChange;
+import co.com.sofka.generic.values.Nombre;
 
 public class TiendaEventChange extends EventChange {
     public TiendaEventChange(Tienda tienda) {
@@ -20,7 +21,7 @@ public class TiendaEventChange extends EventChange {
         });
 
         apply((AsesorAsignado event) -> {
-            tienda.asesor.nombre = event.getNombre();
+            tienda.asesor.nombre = (Nombre) event.getNombre().value();
             tienda.asesor.comision = event.getComision();
         });
 
