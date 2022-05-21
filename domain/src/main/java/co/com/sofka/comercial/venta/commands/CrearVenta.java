@@ -12,35 +12,17 @@ import java.util.List;
 
 public class CrearVenta extends Command {
     private final VentaId ventaId;
-    private final Cliente cliente;
-    private final List<Producto> productos;
-    private final Cupon cupon;
     private final Fecha fecha;
     private final Total total;
 
-    public CrearVenta(VentaId ventaId, Cliente cliente, List<Producto> productos, Cupon cupon, Fecha fecha, Total total){
+    public CrearVenta(VentaId ventaId, Fecha fecha, Total total){
         this.ventaId = ventaId;
-        this.cliente = cliente;
-        this.productos = productos;
-        this.cupon = cupon;
         this.fecha = fecha;
         this.total = total;
     }
 
     public VentaId getVentaId() {
         return ventaId;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public List<Producto> getProductos() {
-        return productos;
-    }
-
-    public Cupon getCupon() {
-        return cupon;
     }
 
     public Fecha getFecha() {

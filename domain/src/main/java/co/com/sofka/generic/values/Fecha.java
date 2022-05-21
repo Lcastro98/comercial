@@ -6,32 +6,15 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Fecha implements ValueObject<Fecha.Props> {
-    private final LocalDateTime hora;
-    private final LocalDate dia;
+public class Fecha implements ValueObject<LocalDateTime> {
+    private final LocalDateTime value;
 
-    public Fecha(LocalDateTime hora, LocalDate dia) {
-        this.hora = Objects.requireNonNull(hora);
-        this.dia = Objects.requireNonNull(dia);
+    public Fecha(LocalDateTime value) {
+        this.value = Objects.requireNonNull(value);
     }
 
     @Override
-    public Props value() {
-        return new Props() {
-            @Override
-            public LocalDateTime hora() {
-                return hora;
-            }
-
-            @Override
-            public LocalDate dia() {
-                return dia;
-            }
-        };
-    }
-
-    public interface Props {
-        LocalDateTime hora();
-        LocalDate dia();
+    public LocalDateTime value() {
+        return value;
     }
 }
