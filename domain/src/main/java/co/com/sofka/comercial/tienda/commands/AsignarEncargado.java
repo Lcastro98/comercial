@@ -1,6 +1,7 @@
 package co.com.sofka.comercial.tienda.commands;
 
 import co.com.sofka.comercial.tienda.values.Comision;
+import co.com.sofka.comercial.tienda.values.MetaMensual;
 import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.generic.values.Nombre;
@@ -8,12 +9,12 @@ import co.com.sofka.generic.values.Nombre;
 public class AsignarEncargado extends Command {
     private final TiendaId tiendaId;
     private final Nombre nombre;
-    private final Comision comision;
+    private final MetaMensual metaMensual;
 
-    public AsignarEncargado(TiendaId tiendaId, Nombre nombre, Comision comision){
+    public AsignarEncargado(TiendaId tiendaId, Nombre nombre, MetaMensual metaMensual){
         this.tiendaId = tiendaId;
         this.nombre = nombre;
-        this.comision = comision;
+        this.metaMensual = metaMensual;
     }
 
     public TiendaId getTiendaId() {
@@ -24,7 +25,7 @@ public class AsignarEncargado extends Command {
         return nombre;
     }
 
-    public Comision getComision() {
-        return comision;
+    public MetaMensual getMetaMensual() {
+        return metaMensual;
     }
 }

@@ -16,7 +16,7 @@ public class BodegaEventChange extends EventChange {
         });
 
         apply((VigilanteAsignado event) -> {
-            bodega.vigilante.nombre = event.getNombre();
+            bodega.vigilante.nombre = (Nombre) event.getNombre().value();
             bodega.vigilante.horario = event.getHorario();
         });
 

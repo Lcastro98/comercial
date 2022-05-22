@@ -2,6 +2,7 @@ package co.com.sofka.comercial.venta;
 
 import co.com.sofka.comercial.venta.events.*;
 import co.com.sofka.domain.generic.EventChange;
+import co.com.sofka.generic.values.Fecha;
 import co.com.sofka.generic.values.Nombre;
 
 public class VentaEventChange extends EventChange {

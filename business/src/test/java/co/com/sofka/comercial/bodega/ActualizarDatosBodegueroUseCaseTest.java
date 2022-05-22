@@ -53,7 +53,7 @@ class ActualizarDatosBodegueroUseCaseTest {
 
             //assert
             var event = (BodegueroActualizado)events.get(0);
-            Assertions.assertEquals(command.getSalario(), event.getSalario());
+            Assertions.assertEquals(command.getNombre(), event.getNombre());
         }
 
         private List<DomainEvent> history() {

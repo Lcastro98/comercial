@@ -35,7 +35,7 @@ class AsignarClienteUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void asignarClienteHappyPass(){
+    public void asignarClienteHappyPass(){
         var ventaId = VentaId.of("zzzz");
         var nombre = new Nombre("Lidia", "Bustamante");
         var telefono = new Telefono("3203331111");
