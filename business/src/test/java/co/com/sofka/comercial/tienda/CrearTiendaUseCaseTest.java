@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CrearTiendaUseCaseTest {
     private CrearTiendaUseCase useCase;
 
@@ -21,7 +19,7 @@ class CrearTiendaUseCaseTest {
     }
 
     @Test
-    public void crearTiendaHappyPass(){
+    public void crearTiendaHappyPass() {
         //arrange
         var tiendaId = TiendaId.of("cccc");
         var ubicacion = new Ubicacion("Cll tal # tal-tal", "Cúcuta", "Colombia");
@@ -34,7 +32,7 @@ class CrearTiendaUseCaseTest {
                 .getDomainEvents();
 
         //asserts
-        var tiendaCreada = (TiendaCreada)events.get(0);
+        var tiendaCreada = (TiendaCreada) events.get(0);
         Assertions.assertEquals("cccc", tiendaCreada.aggregateRootId());
         Assertions.assertEquals("Cll tal # tal-tal", tiendaCreada.getUbicacion().value().direccion());
         Assertions.assertEquals("Cúcuta", tiendaCreada.getUbicacion().value().ciudad());

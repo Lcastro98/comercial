@@ -2,7 +2,6 @@ package co.com.sofka.comercial.venta;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
-import co.com.sofka.comercial.tienda.Tienda;
 import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.comercial.venta.commands.CrearVenta;
 import co.com.sofka.comercial.venta.events.VentaCreada;
@@ -15,18 +14,16 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CrearVentaUseCaseTest {
     private CrearVentaUseCase useCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         useCase = new CrearVentaUseCase();
     }
 
     @Test
-    public void crearVentaHappyPass(){
+    public void crearVentaHappyPass() {
         //arrange
         var tiendaId = TiendaId.of("zzzz");
         var ventaId = VentaId.of("bbbb");
@@ -41,7 +38,7 @@ class CrearVentaUseCaseTest {
                 .getDomainEvents();
 
         //asserts
-        var ventaCreada = (VentaCreada)events.get(0);
+        var ventaCreada = (VentaCreada) events.get(0);
         Assertions.assertEquals("bbbb", ventaCreada.aggregateRootId());
         Assertions.assertEquals(LocalDateTime.of(2022, 05, 20, 8, 19), ventaCreada.getFecha().value());
         Assertions.assertEquals(20000D, ventaCreada.getTotal().value());

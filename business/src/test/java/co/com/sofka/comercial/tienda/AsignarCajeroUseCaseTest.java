@@ -20,7 +20,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -32,11 +31,11 @@ class AsignarCajeroUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    public void asignarCajeroHappyPass(){
+    public void asignarCajeroHappyPass() {
         var tiendaId = TiendaId.of("cccc");
         var nombre = new Nombre("Samuel", "Lopez");
         var caja = new Caja(2000000D);
-        var command = new AsignarCajero(tiendaId, nombre,caja);
+        var command = new AsignarCajero(tiendaId, nombre, caja);
 
         when(repository.getEventsBy("cccc")).thenReturn(history());
         useCase.addRepository(repository);
@@ -49,7 +48,7 @@ class AsignarCajeroUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (CajeroAsignado)events.get(0);
+        var event = (CajeroAsignado) events.get(0);
         Assertions.assertEquals("Samuel", event.getNombre().value().nombre());
         Assertions.assertEquals("Lopez", event.getNombre().value().apellido());
         Assertions.assertEquals(2000000D, event.getCaja().value());

@@ -8,7 +8,6 @@ import co.com.sofka.domain.generic.Entity;
 import co.com.sofka.generic.values.Nombre;
 
 
-
 public class Producto extends Entity<ProductoId> {
     protected Nombre nombre;
     protected Talla talla;

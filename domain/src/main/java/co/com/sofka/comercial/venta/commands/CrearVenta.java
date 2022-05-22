@@ -17,7 +17,7 @@ public class CrearVenta extends Command {
     private final Fecha fecha;
     private final Total total;
 
-    public CrearVenta(TiendaId tiendaId, VentaId ventaId, Fecha fecha, Total total){
+    public CrearVenta(TiendaId tiendaId, VentaId ventaId, Fecha fecha, Total total) {
         this.tiendaId = tiendaId;
         this.ventaId = ventaId;
         this.fecha = fecha;

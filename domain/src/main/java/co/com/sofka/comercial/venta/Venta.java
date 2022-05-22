@@ -26,7 +26,7 @@ public class Venta extends AggregateEvent<VentaId> {
         subscribe(new VentaEventChange(this));
     }
 
-    private Venta(VentaId entityId){
+    private Venta(VentaId entityId) {
         super(entityId);
         subscribe(new VentaEventChange(this));
     }
@@ -37,58 +37,58 @@ public class Venta extends AggregateEvent<VentaId> {
         return venta;
     }
 
-    public void asignarCliente(Nombre nombre, Telefono telefono){
+    public void asignarCliente(Nombre nombre, Telefono telefono) {
         var clienteId = new ClienteId();
         appendChange(new ClienteAsignado(clienteId, nombre, telefono)).apply();
     }
 
-    public void agregarProducto(Nombre nombre, Talla talla, Color color, Precio precio){
+    public void agregarProducto(Nombre nombre, Talla talla, Color color, Precio precio) {
         var productoId = new ProductoId();
         appendChange(new ProductoAgregado(productoId, nombre, talla, color, precio)).apply();
     }
 
-    public void asignarCupon(Descuento descuento, Fecha fecha){
+    public void asignarCupon(Descuento descuento, Fecha fecha) {
         var cuponId = new CuponId();
         appendChange(new CuponAsignado(cuponId, descuento, fecha)).apply();
     }
 
-    public void actualizarDatosCliente(ClienteId entityId, Nombre nombre){
+    public void actualizarDatosCliente(ClienteId entityId, Nombre nombre) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(nombre);
         appendChange(new ClienteActualizado(entityId, nombre)).apply();
     }
 
-    public void actualizarDatosCliente(ClienteId entityId, Telefono telefono){
+    public void actualizarDatosCliente(ClienteId entityId, Telefono telefono) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(telefono);
         appendChange(new ClienteActualizado(entityId, telefono)).apply();
     }
 
-    public void actualizarDatosProducto(ProductoId entityId, Talla talla){
+    public void actualizarDatosProducto(ProductoId entityId, Talla talla) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(talla);
         appendChange(new ProductoActualizado(entityId, talla)).apply();
     }
 
-    public void actualizarDatosProducto(ProductoId entityId, Color color){
+    public void actualizarDatosProducto(ProductoId entityId, Color color) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(color);
         appendChange(new ProductoActualizado(entityId, color)).apply();
     }
 
-    public void actualizarDatosCupon(CuponId entityId, Descuento descuento){
+    public void actualizarDatosCupon(CuponId entityId, Descuento descuento) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(descuento);
         appendChange(new CuponActualizado(entityId, descuento)).apply();
     }
 
-    public void actualizarDatosCupon(CuponId entityId, Fecha fecha){
+    public void actualizarDatosCupon(CuponId entityId, Fecha fecha) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(fecha);
         appendChange(new CuponActualizado(entityId, fecha)).apply();
     }
 
-    public void registrarVenta(Total total){
+    public void registrarVenta(Total total) {
         appendChange(new VentaRegistrada(total, tiendaId)).apply();
     }
 

@@ -12,7 +12,7 @@ public class AsignarCliente extends Command {
     private final Nombre nombre;
     private final Telefono telefono;
 
-    public AsignarCliente(VentaId ventaId, Nombre nombre, Telefono telefono){
+    public AsignarCliente(VentaId ventaId, Nombre nombre, Telefono telefono) {
         this.ventaId = ventaId;
         this.nombre = nombre;
         this.telefono = telefono;

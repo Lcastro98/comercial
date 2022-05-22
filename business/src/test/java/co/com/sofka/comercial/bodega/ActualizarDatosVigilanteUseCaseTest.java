@@ -19,7 +19,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -35,7 +34,7 @@ class ActualizarDatosVigilanteUseCaseTest {
         //arrange
         var bodegaId = BodegaId.of("xxxx");
         var entityId = VigilanteId.of("0");
-        var nombre = new Nombre(  "Marta", "Gallego");
+        var nombre = new Nombre("Marta", "Gallego");
         var command = new ActualizarDatosVigilante(bodegaId, entityId, nombre);
 
         when(repository.getEventsBy("xxxx")).thenReturn(history());
@@ -49,7 +48,7 @@ class ActualizarDatosVigilanteUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (VigilanteActualizado)events.get(0);
+        var event = (VigilanteActualizado) events.get(0);
         Assertions.assertEquals(command.getNombre(), event.getNombre());
     }
 

@@ -6,7 +6,7 @@ public class VentaId extends Identity {
     public VentaId() {
     }
 
-    public VentaId(String id){
+    public VentaId(String id) {
         super(id);
     }
 

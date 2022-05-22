@@ -10,7 +10,7 @@ public class AsignarCupon extends Command {
     private final Descuento descuento;
     private final Fecha fecha;
 
-    public AsignarCupon(VentaId ventaId, Descuento descuento, Fecha fecha){
+    public AsignarCupon(VentaId ventaId, Descuento descuento, Fecha fecha) {
         this.ventaId = ventaId;
         this.descuento = descuento;
         this.fecha = fecha;

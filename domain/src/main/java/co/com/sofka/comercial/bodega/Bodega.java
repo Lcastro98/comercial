@@ -24,7 +24,7 @@ public class Bodega extends AggregateEvent<BodegaId> {
         subscribe(new BodegaEventChange(this));
     }
 
-    private Bodega(BodegaId entityId){
+    private Bodega(BodegaId entityId) {
         super(entityId);
         subscribe(new BodegaEventChange(this));
     }
@@ -35,52 +35,52 @@ public class Bodega extends AggregateEvent<BodegaId> {
         return bodega;
     }
 
-    public void asignarBodeguero(Nombre nombre, Salario salario){
+    public void asignarBodeguero(Nombre nombre, Salario salario) {
         var bodegueroId = new BodegueroId();
         appendChange(new BodegueroAsignado(bodegueroId, nombre, salario)).apply();
     }
 
-    public void asignarVigilante(Nombre nombre, Horario horario){
+    public void asignarVigilante(Nombre nombre, Horario horario) {
         var vigilanteId = new VigilanteId();
         appendChange(new VigilanteAsignado(vigilanteId, nombre, horario)).apply();
     }
 
-    public void asignarDespacho(Fecha fecha, Destino destino){
+    public void asignarDespacho(Fecha fecha, Destino destino) {
         var despachoId = new DespachoId();
         appendChange(new DespachoAsignado(despachoId, fecha, destino)).apply();
     }
 
-    public void actualizarDatosBodeguero(BodegueroId entityId, Nombre nombre){
+    public void actualizarDatosBodeguero(BodegueroId entityId, Nombre nombre) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(nombre);
         appendChange(new BodegueroActualizado(entityId, nombre)).apply();
     }
 
-    public void actualizarDatosBodeguero(BodegueroId entityId, Salario salario){
+    public void actualizarDatosBodeguero(BodegueroId entityId, Salario salario) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(salario);
         appendChange(new BodegueroActualizado(entityId, salario)).apply();
     }
 
-    public void actualizarDatosVigilante(VigilanteId entityId, Nombre nombre){
+    public void actualizarDatosVigilante(VigilanteId entityId, Nombre nombre) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(nombre);
         appendChange(new VigilanteActualizado(entityId, nombre)).apply();
     }
 
-    public void actualizarDatosVigilante(VigilanteId entityId, Horario horario){
+    public void actualizarDatosVigilante(VigilanteId entityId, Horario horario) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(horario);
         appendChange(new VigilanteActualizado(entityId, horario)).apply();
     }
 
-    public void actualizarDatosDespacho(DespachoId entityId, Fecha fecha){
+    public void actualizarDatosDespacho(DespachoId entityId, Fecha fecha) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(fecha);
         appendChange(new DespachoActualizado(entityId, fecha)).apply();
     }
 
-    public void actualizarDatosDespacho(DespachoId entityId, Destino destino){
+    public void actualizarDatosDespacho(DespachoId entityId, Destino destino) {
         Objects.requireNonNull(entityId);
         Objects.requireNonNull(destino);
         appendChange(new DespachoActualizado(entityId, destino)).apply();

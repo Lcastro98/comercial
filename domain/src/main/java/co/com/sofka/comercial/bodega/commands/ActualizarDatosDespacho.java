@@ -9,13 +9,13 @@ public class ActualizarDatosDespacho {
     private final Fecha fecha;
     private final Destino destino;
 
-    public ActualizarDatosDespacho(DespachoId entityId, Fecha fecha){
+    public ActualizarDatosDespacho(DespachoId entityId, Fecha fecha) {
         this.entityId = entityId;
         this.fecha = fecha;
         destino = null;
     }
 
-    public ActualizarDatosDespacho(DespachoId entityId, Destino destino){
+    public ActualizarDatosDespacho(DespachoId entityId, Destino destino) {
         this.entityId = entityId;
         this.destino = destino;
         fecha = null;

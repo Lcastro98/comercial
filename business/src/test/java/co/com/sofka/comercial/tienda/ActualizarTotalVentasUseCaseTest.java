@@ -30,7 +30,7 @@ class ActualizarTotalVentasUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void actualizarListaDeVentasHappyPass(){
+    void actualizarListaDeVentasHappyPass() {
         //arrange
         var event = new VentaRegistrada(new Total(100000D), TiendaId.of("cccc"));
 
@@ -44,7 +44,7 @@ class ActualizarTotalVentasUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var totalVentasActualizado = (TotalVentasActualizado)events.get(0);
+        var totalVentasActualizado = (TotalVentasActualizado) events.get(0);
         Assertions.assertEquals(100000D, totalVentasActualizado.getTotalVentas().value());
     }
 

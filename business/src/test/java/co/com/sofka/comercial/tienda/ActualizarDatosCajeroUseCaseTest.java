@@ -17,7 +17,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -29,7 +28,7 @@ class ActualizarDatosCajeroUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void actualizarDatosCajeroHappyPass(){
+    void actualizarDatosCajeroHappyPass() {
         //arrange
         var tiendaId = TiendaId.of("cccc");
         var entityId = CajeroId.of("0");
@@ -47,7 +46,7 @@ class ActualizarDatosCajeroUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (CajeroActualizado)events.get(0);
+        var event = (CajeroActualizado) events.get(0);
         Assertions.assertEquals(command.getNombre(), event.getNombre());
     }
 

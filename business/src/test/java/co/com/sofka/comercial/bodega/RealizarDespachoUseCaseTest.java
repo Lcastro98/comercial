@@ -42,7 +42,7 @@ class RealizarDespachoUseCaseTest {
                 .orElseThrow()
                 .getDomainEvents();
 
-        var despachoRealizado = (DespachoRealizado)events.get(0);
+        var despachoRealizado = (DespachoRealizado) events.get(0);
         Assertions.assertEquals(ubicacion, despachoRealizado.getUbicacion());
     }
 

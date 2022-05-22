@@ -10,7 +10,7 @@ public class AsignarDespacho extends Command {
     private final Fecha fecha;
     private final Destino destino;
 
-    public AsignarDespacho(DespachoId despachoId, Fecha fecha, Destino destino){
+    public AsignarDespacho(DespachoId despachoId, Fecha fecha, Destino destino) {
         this.despachoId = despachoId;
         this.fecha = fecha;
         this.destino = destino;

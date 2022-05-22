@@ -12,7 +12,7 @@ public class AsignarProducto extends Command {
     private final Color color;
     private final Precio precio;
 
-    public AsignarProducto(VentaId VentaId, Nombre nombre, Talla talla, Color color, Precio precio){
+    public AsignarProducto(VentaId VentaId, Nombre nombre, Talla talla, Color color, Precio precio) {
         this.ventaId = VentaId;
         this.nombre = nombre;
         this.talla = talla;

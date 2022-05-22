@@ -10,6 +10,7 @@ public class Talla implements ValueObject<Talla.Tallas> {
 
         this.value = value;
     }
+
     @Override
     public Tallas value() {
         return value;

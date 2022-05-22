@@ -17,7 +17,7 @@ public class Ubicacion implements ValueObject<Ubicacion.Props> {
 
     @Override
     public Props value() {
-        return new Props(){
+        return new Props() {
             @Override
             public String direccion() {
                 return direccion;

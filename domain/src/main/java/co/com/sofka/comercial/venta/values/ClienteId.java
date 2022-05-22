@@ -5,7 +5,8 @@ import co.com.sofka.domain.generic.Identity;
 public class ClienteId extends Identity {
     public ClienteId() {
     }
-    public ClienteId(String id){
+
+    public ClienteId(String id) {
         super(id);
     }
 

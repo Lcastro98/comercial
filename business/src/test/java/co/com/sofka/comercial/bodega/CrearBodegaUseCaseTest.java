@@ -14,12 +14,12 @@ class CrearBodegaUseCaseTest {
     private CrearBodegaUseCase useCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         useCase = new CrearBodegaUseCase();
     }
 
     @Test
-    public void crearBodegaHappyPass(){
+    public void crearBodegaHappyPass() {
         //arrange
         var bodegaId = BodegaId.of("xxxx");
         var dimension = new Dimension(2.8F, 2.5F, 2.8F);
@@ -32,7 +32,7 @@ class CrearBodegaUseCaseTest {
                 .getDomainEvents();
 
         //asserts
-        var bodegaCreada = (BodegaCreada)events.get(0);
+        var bodegaCreada = (BodegaCreada) events.get(0);
         Assertions.assertEquals("xxxx", bodegaCreada.aggregateRootId());
         Assertions.assertEquals(2.8F, bodegaCreada.getDimension().value().largo());
         Assertions.assertEquals(2.5F, bodegaCreada.getDimension().value().alto());

@@ -9,6 +9,9 @@ public class MetaMensual implements ValueObject<String> {
 
     public MetaMensual(String value) {
         this.value = Objects.requireNonNull(value);
+        if(this.value.length() > 200){
+            throw new IllegalArgumentException("La meta mensual no permite mas de 200 caracteres");
+        }
     }
 
     @Override

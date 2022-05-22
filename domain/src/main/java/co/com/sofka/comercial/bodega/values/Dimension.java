@@ -9,7 +9,7 @@ public class Dimension implements ValueObject<Dimension.Props> {
     private final Float alto;
     private final Float ancho;
 
-    public Dimension(Float largo, Float alto, Float ancho){
+    public Dimension(Float largo, Float alto, Float ancho) {
         this.largo = Objects.requireNonNull(largo);
         this.alto = Objects.requireNonNull(alto);
         this.ancho = Objects.requireNonNull(ancho);
@@ -37,7 +37,9 @@ public class Dimension implements ValueObject<Dimension.Props> {
 
     public interface Props {
         Float largo();
+
         Float alto();
+
         Float ancho();
     }
 }

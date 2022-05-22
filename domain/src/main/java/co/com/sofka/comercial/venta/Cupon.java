@@ -16,7 +16,7 @@ public class Cupon extends Entity<CuponId> {
         this.fecha = fecha;
     }
 
-    public void actualizarDescuento(Fecha fecha) {
+    public void actualizarFecha(Fecha fecha) {
         this.fecha = fecha;
     }
 }

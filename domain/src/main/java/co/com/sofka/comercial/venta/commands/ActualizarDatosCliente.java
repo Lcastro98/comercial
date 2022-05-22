@@ -12,14 +12,14 @@ public class ActualizarDatosCliente extends Command {
     private final Telefono telefono;
     private final Nombre nombre;
 
-    public ActualizarDatosCliente(VentaId ventaId, ClienteId entityId, Nombre nombre){
+    public ActualizarDatosCliente(VentaId ventaId, ClienteId entityId, Nombre nombre) {
         this.ventaId = ventaId;
         this.entityId = entityId;
         this.nombre = nombre;
         telefono = null;
     }
 
-    public ActualizarDatosCliente(VentaId ventaId, ClienteId entityId, Telefono telefono){
+    public ActualizarDatosCliente(VentaId ventaId, ClienteId entityId, Telefono telefono) {
         this.ventaId = ventaId;
         this.entityId = entityId;
         this.telefono = telefono;

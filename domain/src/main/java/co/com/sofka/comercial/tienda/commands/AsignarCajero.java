@@ -10,7 +10,7 @@ public class AsignarCajero extends Command {
     private final Nombre nombre;
     private final Caja caja;
 
-    public AsignarCajero(TiendaId tiendaId, Nombre nombre, Caja caja){
+    public AsignarCajero(TiendaId tiendaId, Nombre nombre, Caja caja) {
         this.tiendaId = tiendaId;
         this.nombre = nombre;
         this.caja = caja;

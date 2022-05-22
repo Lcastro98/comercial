@@ -5,6 +5,7 @@ import co.com.sofka.domain.generic.Identity;
 public class BodegueroId extends Identity {
     public BodegueroId() {
     }
+
     public BodegueroId(String id) {
         super(id);
     }

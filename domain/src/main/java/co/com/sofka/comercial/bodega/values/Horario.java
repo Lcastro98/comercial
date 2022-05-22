@@ -10,7 +10,7 @@ public class Horario implements ValueObject<Horario.Props> {
     private final LocalDateTime horaInicio;
     private final LocalDateTime horaFin;
 
-    public Horario(LocalDateTime horaInicio, LocalDateTime horaFin){
+    public Horario(LocalDateTime horaInicio, LocalDateTime horaFin) {
         this.horaInicio = Objects.requireNonNull(horaInicio);
         this.horaFin = Objects.requireNonNull(horaFin);
     }
@@ -32,6 +32,7 @@ public class Horario implements ValueObject<Horario.Props> {
 
     public interface Props {
         LocalDateTime horaInicio();
+
         LocalDateTime horaFin();
     }
 }

@@ -10,7 +10,7 @@ public class AsignarAsesor extends Command {
     private final Nombre nombre;
     private final Comision comision;
 
-    public AsignarAsesor(TiendaId tiendaId, Nombre nombre, Comision comision){
+    public AsignarAsesor(TiendaId tiendaId, Nombre nombre, Comision comision) {
         this.tiendaId = tiendaId;
         this.nombre = nombre;
         this.comision = comision;

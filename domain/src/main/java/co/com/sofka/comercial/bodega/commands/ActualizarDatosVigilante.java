@@ -12,14 +12,14 @@ public class ActualizarDatosVigilante extends Command {
     private final Nombre nombre;
     private final Horario horario;
 
-    public ActualizarDatosVigilante(BodegaId bodegaId, VigilanteId entityId, Nombre nombre){
+    public ActualizarDatosVigilante(BodegaId bodegaId, VigilanteId entityId, Nombre nombre) {
         this.bodegaId = bodegaId;
         this.entityId = entityId;
         this.nombre = nombre;
         horario = null;
     }
 
-    public ActualizarDatosVigilante(BodegaId bodegaId, VigilanteId entityId, Horario horario){
+    public ActualizarDatosVigilante(BodegaId bodegaId, VigilanteId entityId, Horario horario) {
         this.bodegaId = bodegaId;
         this.entityId = entityId;
         this.horario = horario;

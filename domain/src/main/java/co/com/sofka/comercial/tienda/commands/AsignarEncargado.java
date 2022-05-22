@@ -11,7 +11,7 @@ public class AsignarEncargado extends Command {
     private final Nombre nombre;
     private final MetaMensual metaMensual;
 
-    public AsignarEncargado(TiendaId tiendaId, Nombre nombre, MetaMensual metaMensual){
+    public AsignarEncargado(TiendaId tiendaId, Nombre nombre, MetaMensual metaMensual) {
         this.tiendaId = tiendaId;
         this.nombre = nombre;
         this.metaMensual = metaMensual;

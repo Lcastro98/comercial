@@ -10,7 +10,7 @@ public class AsignarBodeguero extends Command {
     private final Nombre nombre;
     private final Salario salario;
 
-    public AsignarBodeguero(BodegaId bodegaId, Nombre nombre, Salario salario){
+    public AsignarBodeguero(BodegaId bodegaId, Nombre nombre, Salario salario) {
         this.bodegaId = bodegaId;
         this.nombre = nombre;
         this.salario = salario;

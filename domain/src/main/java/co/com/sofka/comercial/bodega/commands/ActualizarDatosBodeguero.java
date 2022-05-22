@@ -12,14 +12,14 @@ public class ActualizarDatosBodeguero extends Command {
     private final Nombre nombre;
     private final Salario salario;
 
-    public ActualizarDatosBodeguero(BodegaId bodegaId, BodegueroId entityId, Nombre nombre){
+    public ActualizarDatosBodeguero(BodegaId bodegaId, BodegueroId entityId, Nombre nombre) {
         this.bodegaId = bodegaId;
         this.entityId = entityId;
         this.nombre = nombre;
         salario = null;
     }
 
-    public ActualizarDatosBodeguero(BodegaId bodegaId, BodegueroId entityId, Salario salario){
+    public ActualizarDatosBodeguero(BodegaId bodegaId, BodegueroId entityId, Salario salario) {
         this.bodegaId = bodegaId;
         this.entityId = entityId;
         this.salario = salario;

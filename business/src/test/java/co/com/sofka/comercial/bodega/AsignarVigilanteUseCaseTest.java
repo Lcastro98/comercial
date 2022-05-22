@@ -5,7 +5,6 @@ import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.comercial.bodega.commands.AsignarVigilante;
 import co.com.sofka.comercial.bodega.events.BodegaCreada;
-import co.com.sofka.comercial.bodega.events.BodegueroAsignado;
 import co.com.sofka.comercial.bodega.events.VigilanteAsignado;
 import co.com.sofka.comercial.bodega.values.BodegaId;
 import co.com.sofka.comercial.bodega.values.Dimension;
@@ -19,11 +18,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -35,7 +32,7 @@ class AsignarVigilanteUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void asignarVigilanteHappyPass(){
+    void asignarVigilanteHappyPass() {
         //arrange
         var bodegaId = BodegaId.of("xxxx");
         var nombre = new Nombre("Ernesto", "Perez");
@@ -53,7 +50,7 @@ class AsignarVigilanteUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (VigilanteAsignado)events.get(0);
+        var event = (VigilanteAsignado) events.get(0);
         var horaInicio = LocalDateTime.of(2022, 05, 21, 8, 0);
         var horaFin = LocalDateTime.of(2022, 05, 21, 18, 0);
         Assertions.assertEquals("Ernesto", event.getNombre().value().nombre());

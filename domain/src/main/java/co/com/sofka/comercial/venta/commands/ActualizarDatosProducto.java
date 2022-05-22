@@ -10,13 +10,13 @@ public class ActualizarDatosProducto extends Command {
     private final Talla talla;
     private final Color color;
 
-    public ActualizarDatosProducto(VentaId ventaId, Talla talla){
+    public ActualizarDatosProducto(VentaId ventaId, Talla talla) {
         this.ventaId = ventaId;
         this.talla = talla;
         color = null;
     }
 
-    public ActualizarDatosProducto(VentaId ventaId, Color color){
+    public ActualizarDatosProducto(VentaId ventaId, Color color) {
         this.ventaId = ventaId;
         this.color = color;
         talla = null;

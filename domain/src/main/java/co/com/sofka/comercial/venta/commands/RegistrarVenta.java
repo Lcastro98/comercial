@@ -1,4 +1,4 @@
-package co.com.sofka.comercial.venta.events;
+package co.com.sofka.comercial.venta.commands;
 
 import co.com.sofka.comercial.tienda.values.TiendaId;
 import co.com.sofka.comercial.venta.values.VentaId;

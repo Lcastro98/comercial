@@ -10,7 +10,7 @@ public class AsignarVigilante extends Command {
     private final Nombre nombre;
     private final Horario horario;
 
-    public AsignarVigilante(BodegaId bodegaId, Nombre nombre, Horario horario){
+    public AsignarVigilante(BodegaId bodegaId, Nombre nombre, Horario horario) {
         this.bodegaId = bodegaId;
         this.nombre = nombre;
         this.horario = horario;

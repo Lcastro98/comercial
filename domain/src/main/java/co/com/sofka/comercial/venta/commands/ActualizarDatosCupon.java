@@ -10,13 +10,13 @@ public class ActualizarDatosCupon extends Command {
     private final Descuento descuento;
     private final Fecha fecha;
 
-    public ActualizarDatosCupon(VentaId ventaId, Descuento descuento){
+    public ActualizarDatosCupon(VentaId ventaId, Descuento descuento) {
         this.ventaId = ventaId;
         this.descuento = descuento;
         fecha = null;
     }
 
-    public ActualizarDatosCupon(VentaId ventaId, Fecha fecha){
+    public ActualizarDatosCupon(VentaId ventaId, Fecha fecha) {
         this.ventaId = ventaId;
         this.fecha = fecha;
         descuento = null;

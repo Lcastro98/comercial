@@ -6,7 +6,7 @@ public class CajeroId extends Identity {
     public CajeroId() {
     }
 
-    public CajeroId(String id){
+    public CajeroId(String id) {
         super(id);
     }
 

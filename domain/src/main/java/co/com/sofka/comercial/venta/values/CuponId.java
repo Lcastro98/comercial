@@ -6,7 +6,7 @@ public class CuponId extends Identity {
     public CuponId() {
     }
 
-    public CuponId(String id){
+    public CuponId(String id) {
         super(id);
     }
 
